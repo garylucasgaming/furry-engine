@@ -11,12 +11,15 @@ public class InventoryManager : MonoBehaviour
 
     private void Awake()
     {
-
-        //generate the inventory
         inventory = new Inventory();
-        uiInventory.SetInventory(inventory);
+        //generate the inventory
+        
 
     }
+    private void Start()
+    {
+        uiInventory.SetInventory(inventory);
+    }
 
-   
+
 }

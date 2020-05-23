@@ -8,7 +8,7 @@ using TMPro;
 public class UI_Inventory : MonoBehaviour
 {
     //reference to inventory
-    private Inventory inventory;
+   public Inventory inventory;
 
     //init of item slots
     private Transform itemSlotContainer;
@@ -35,20 +35,26 @@ public class UI_Inventory : MonoBehaviour
     }
 
     private void RefreshInventoryItems() {
-        foreach (Transform child in itemSlotContainer) {
+        foreach (Transform child in itemSlotContainer)
+        {
             if (child == itemSlotTemplate) continue;
             Destroy(child.gameObject);
+            
         }
         int x = 0;
         int y = 0;
         float itemSlotCellSize = 30f;
         foreach (Item item in inventory.GetItemList()) {
-            RectTransform itemSlotRectTransform = Instantiate(itemSlotTemplate, itemSlotContainer).GetComponent<RectTransform>();
-            itemSlotRectTransform.gameObject.SetActive(true);
             
+            RectTransform itemSlotRectTransform = Instantiate(itemSlotTemplate, itemSlotContainer).GetComponent<RectTransform>();
+            
+            itemSlotRectTransform.gameObject.SetActive(true);
 
+            
             itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y * itemSlotCellSize);
+           
             Image image = itemSlotRectTransform.Find("image").GetComponent<Image>();
+            
             image.sprite = item.GetSprite();
 
             TextMeshProUGUI uiText = itemSlotRectTransform.Find("text").GetComponent<TextMeshProUGUI>();
