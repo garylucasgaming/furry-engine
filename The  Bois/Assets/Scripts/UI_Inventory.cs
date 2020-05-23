@@ -34,7 +34,7 @@ public class UI_Inventory : MonoBehaviour
         RefreshInventoryItems();
     }
 
-    private void RefreshInventoryItems() {
+    public void RefreshInventoryItems() {
         foreach (Transform child in itemSlotContainer)
         {
             if (child == itemSlotTemplate) continue;

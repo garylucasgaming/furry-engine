@@ -15,7 +15,7 @@ public class Inventory
 
     //inventory constructor
     public Inventory() {
-        itemList = new List<Item>();
+        itemList = new List<Item>(9);
 
        
        

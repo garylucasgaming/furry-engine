@@ -25,6 +25,8 @@ public class Item
             case ItemType.Dandelion: return ItemAssets.Instance.dandelionSprite;
             case ItemType.Pumpkin: return ItemAssets.Instance.pumpkinSprite;
             case ItemType.Bat:  return ItemAssets.Instance.batSprite;
+            case ItemType.HealingPotion: return ItemAssets.Instance.healingPotionSprite;
+            case ItemType.StrengthPotion: return ItemAssets.Instance.strengthPotionSprite;
 
         }
     }

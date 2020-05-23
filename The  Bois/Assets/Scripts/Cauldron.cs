@@ -7,6 +7,7 @@ public class Cauldron : MonoBehaviour
     //inits
     public Inventory inventory;
     public List<Recipe> recipeList;
+  
 
     public void Awake()
     {
@@ -14,15 +15,23 @@ public class Cauldron : MonoBehaviour
         inventory = new Inventory();
         recipeList = new List<Recipe>();
         GenerateRecipeList();
-       
+
+
+    }
+
+    public void Start()
+    {
+
+        
     }
 
     //put recipes here
     public void GenerateRecipeList() {
-        //healing potion
-        AddRecipe(new Recipe {  recipeType = Recipe.RecipeType.HealingPotionRecipe, firstIngredient = Item.ItemType.Dandelion, secondIngredient = Item.ItemType.Pumpkin});
-        //strength potion
-        AddRecipe(new Recipe { recipeType = Recipe.RecipeType.StrengthPotionRecipe, firstIngredient = Item.ItemType.Bat, secondIngredient = Item.ItemType.Pumpkin });
+        //healing potion recipe
+        AddRecipe(new Recipe { recipeType = Recipe.RecipeType.HealingPotionRecipe, potion = new Item { itemType = Item.ItemType.HealingPotion, amount = 1 }, ingredientOne =  new Item {itemType = Item.ItemType.Dandelion, amount = 1 }, ingredientTwo = new Item { itemType = Item.ItemType.Pumpkin, amount = 1 }, Name = "Healing Potion" } );
+
+        //strength potion recipe
+        AddRecipe(new Recipe { recipeType = Recipe.RecipeType.StrengthPotionRecipe, potion = new Item { itemType = Item.ItemType.StrengthPotion, amount = 1 }, ingredientOne = new Item { itemType = Item.ItemType.Bat, amount = 1 }, ingredientTwo = new Item { itemType = Item.ItemType.Dandelion, amount = 1 }, Name = "Strength Potion" });
 
     }
 
@@ -38,21 +47,9 @@ public class Cauldron : MonoBehaviour
     }
 
 
-    //add ingredients to cauldron iinventory IF player has ingredients, checked against the current selected recipe, in their inventory
-    public void AddIngredients() { }
-
-
-    //if items in cauldron inventory match items on current selected recipe, then  remove  from cauldron
-    //inventory and add the current selected recipe's related potion  to the players inventory
-    public void Brew() { }
-
-
     
-
-    //recipe ui
-
-    //cauldron ui
-
+    
+    
 
 
 }

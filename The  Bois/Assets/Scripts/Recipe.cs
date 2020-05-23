@@ -13,8 +13,10 @@ public class Recipe
     }
 
     public RecipeType recipeType;
-    public Item.ItemType firstIngredient;
-    public Item.ItemType secondIngredient;
+    public Item potion;
+    public Item ingredientOne;
+    public Item ingredientTwo;
+    public string Name;
     
 
 
