@@ -7,16 +7,19 @@ public class InventoryManager : MonoBehaviour
     //inventory init accessible only by this manager
     public Inventory inventory;
 
-    [SerializeField] private UI_Inventory uiInventory;
+    [SerializeField] public UI_Inventory uiInventory;
 
     private void Awake()
     {
-
-        //generate the inventory
         inventory = new Inventory();
-        uiInventory.SetInventory(inventory);
+        //generate the inventory
+        
 
     }
+    private void Start()
+    {
+        uiInventory.SetInventory(inventory);
+    }
 
-   
+
 }

@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Item
 {
-    //item types in game
+    //list of items in game(resources and potions
     public enum ItemType {
         Dandelion,
         Pumpkin,
-        Bat
+        Bat,
+        HealingPotion, 
+        StrengthPotion
 
     }
 
@@ -22,7 +24,9 @@ public class Item
             default:
             case ItemType.Dandelion: return ItemAssets.Instance.dandelionSprite;
             case ItemType.Pumpkin: return ItemAssets.Instance.pumpkinSprite;
-            case ItemType.Bat: return ItemAssets.Instance.batSprite;
+            case ItemType.Bat:  return ItemAssets.Instance.batSprite;
+            case ItemType.HealingPotion: return ItemAssets.Instance.healingPotionSprite;
+            case ItemType.StrengthPotion: return ItemAssets.Instance.strengthPotionSprite;
 
         }
     }

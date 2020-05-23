@@ -3,23 +3,21 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory 
+
+public class Inventory  
 {
 
     public event EventHandler OnItemListChanged;
 
     //init of item list for the inventory
-    private List<Item> itemList;
+    public List<Item> itemList;
 
 
-    //inventory definition
+    //inventory constructor
     public Inventory() {
-        itemList = new List<Item>();
+        itemList = new List<Item>(9);
 
-        //the itenm  list TODO FOR TESTING
-       // AddItem(new Item { itemType = Item.ItemType.Bat, amount = 1 });
-       // AddItem(new Item { itemType = Item.ItemType.Dandelion, amount = 1 });
-       // AddItem(new Item { itemType = Item.ItemType.Pumpkin, amount = 1 });
+       
        
     }
 

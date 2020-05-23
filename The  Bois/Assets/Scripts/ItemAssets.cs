@@ -16,6 +16,8 @@ public class ItemAssets : MonoBehaviour
     public Sprite dandelionSprite;
     public Sprite pumpkinSprite;
     public Sprite batSprite;
+    public Sprite healingPotionSprite;
+    public Sprite strengthPotionSprite;
 
 
 }
