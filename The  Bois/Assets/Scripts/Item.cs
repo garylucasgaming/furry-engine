@@ -6,8 +6,8 @@ public class Item
 {
     //list of items in game(resources and potions
     public enum ItemType {
-        Dandelion,
-        Pumpkin,
+        Orchid,
+        Lavender,
         Bat,
         HealingPotion, 
         StrengthPotion
@@ -22,8 +22,8 @@ public class Item
     public Sprite GetSprite() {
         switch (itemType) {
             default:
-            case ItemType.Dandelion: return ItemAssets.Instance.dandelionSprite;
-            case ItemType.Pumpkin: return ItemAssets.Instance.pumpkinSprite;
+            case ItemType.Orchid: return ItemAssets.Instance.dandelionSprite;
+            case ItemType.Lavender: return ItemAssets.Instance.pumpkinSprite;
             case ItemType.Bat:  return ItemAssets.Instance.batSprite;
             case ItemType.HealingPotion: return ItemAssets.Instance.healingPotionSprite;
             case ItemType.StrengthPotion: return ItemAssets.Instance.strengthPotionSprite;
