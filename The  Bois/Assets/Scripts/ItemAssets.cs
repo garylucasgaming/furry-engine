@@ -13,8 +13,8 @@ public class ItemAssets : MonoBehaviour
     
 
     //the sprite which will need to be populated
-    public Sprite dandelionSprite;
-    public Sprite pumpkinSprite;
+    public Sprite lavenderSprite;
+    public Sprite orchidSprite;
     public Sprite batSprite;
     public Sprite healingPotionSprite;
     public Sprite strengthPotionSprite;
