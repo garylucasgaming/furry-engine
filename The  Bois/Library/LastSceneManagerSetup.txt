@@ -1,13 +1,5 @@
 sceneSetups:
-<<<<<<< HEAD
-<<<<<<< HEAD
-- path: Assets/Scenes/gary's scene.unity
-=======
-- path: Assets/Kris_J/Test_Scene.unity
->>>>>>> Kris-J
-=======
-- path: Assets/Scenes/gary's scene.unity
->>>>>>> master
+- path: Assets/Scenes/House.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -1460,3 +1460,9 @@ The  Bois/Library/PackageCache/com.unity.2d.spriteshape@3.0.11/package.json
 The  Bois/Library/PackageCache/com.unity.2d.psdimporter@2.1.4/package.json
 The  Bois/Library/PackageCache/com.unity.2d.pixel-perfect@2.0.4/package.json
 The  Bois/Library/PackageCache/com.unity.2d.path@2.0.4/package.json
+*.dwlt
+The  Bois/Library/ArtifactDB
+The  Bois/Library/ArtifactDB
+*.log
+The  Bois/Library/SourceAssetDB
+The  Bois/Library/ScriptAssemblies/Assembly-CSharp.dll
