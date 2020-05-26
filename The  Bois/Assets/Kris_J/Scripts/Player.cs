@@ -11,6 +11,9 @@ public class Player : MonoBehaviour
     public float Speed;
     public bool canInteract;
 
+    //player money for selling potions 
+    public int money;
+
     //Holds player RigidBody and speed
     private Rigidbody2D rb;
     private Vector2 moveVelocity;
@@ -76,6 +79,15 @@ public class Player : MonoBehaviour
             {
                 if (cauldronOpen == true)
                 {
+                    if (collisionObject.GetComponent<Cauldron>().inventory.itemList.Count != 0)
+                    {
+                        foreach (Item item in collisionObject.GetComponent<Cauldron>().inventory.itemList)
+                        {
+                            IM.inventory.AddItem(item);
+                        }
+                        canvas.transform.Find("UI_Cauldron").GetComponent<UI_Cauldron>().clearCauldron();
+                    }
+
                     //canvas.transform.Find("UI_Inventory").gameObject.SetActive(false);
                     canvas.transform.Find("UI_Cauldron").gameObject.SetActive(false);
                     cauldronOpen = false;
@@ -85,11 +97,18 @@ public class Player : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
 
-                if (!collisionObject.CompareTag("Cauldron"))
+                if (!collisionObject.CompareTag("Cauldron") && !collisionObject.CompareTag("Trader"))
                 {
                     IM.inventory.AddItem(new Item { itemType = collisionObject.GetComponent<ObjectItem>().itemType, amount = 1 });
                    collisionObject.GetComponent<ObjectItem>().destroyObject();
 
+                }
+
+                //trader
+                if (collisionObject.CompareTag("Trader"))
+                {
+                    Debug.Log("found trader, gonna try to sell potions");
+                    collisionObject.GetComponentInChildren<Trader>().SellPotions();
                 }
 
                 //cauldron
@@ -106,8 +125,8 @@ public class Player : MonoBehaviour
                     canvas.transform.Find("UI_Cauldron").gameObject.SetActive(false);
                     cauldronOpen = false;
                 }
-               
 
+                
 
 
             }

@@ -15,8 +15,6 @@ public class Cauldron : MonoBehaviour
         inventory = new Inventory();
         recipeList = new List<Recipe>();
         GenerateRecipeList();
-
-
     }
 
     public void Start()

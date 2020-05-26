@@ -14,6 +14,7 @@ public class Interact : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D player)
     {
+        Debug.Log("colliding");
         if (player.tag == "Player")
         {
             UserPlayer = player.GetComponent<Player>();
