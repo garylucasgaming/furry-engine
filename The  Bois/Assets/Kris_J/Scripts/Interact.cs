@@ -8,13 +8,9 @@ using UnityEngine;
 public class Interact : MonoBehaviour
 {
     [SerializeField]
-    private Canvas interactUI;
     private Player UserPlayer;
 
-    private void Start() { 
     
-        interactUI = GetComponentInChildren<Canvas>(true);
-    }
 
     private void OnTriggerEnter2D(Collider2D player)
     {
@@ -22,6 +18,9 @@ public class Interact : MonoBehaviour
         {
             UserPlayer = player.GetComponent<Player>();
             UserPlayer.canInteract = true;
+            this.transform.Find("objectCanvas").gameObject.SetActive(true);
+            
+            
         }
     }
 
@@ -31,6 +30,7 @@ public class Interact : MonoBehaviour
         {
             UserPlayer = player.GetComponent<Player>();
             UserPlayer.canInteract = false;
+            this.transform.Find("objectCanvas").gameObject.SetActive(false);
         }
     }
 }

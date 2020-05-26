@@ -22,8 +22,8 @@ public class Item
     public Sprite GetSprite() {
         switch (itemType) {
             default:
-            case ItemType.Orchid: return ItemAssets.Instance.dandelionSprite;
-            case ItemType.Lavender: return ItemAssets.Instance.pumpkinSprite;
+            case ItemType.Orchid: return ItemAssets.Instance.orchidSprite;
+            case ItemType.Lavender: return ItemAssets.Instance.lavenderSprite;
             case ItemType.Bat:  return ItemAssets.Instance.batSprite;
             case ItemType.HealingPotion: return ItemAssets.Instance.healingPotionSprite;
             case ItemType.StrengthPotion: return ItemAssets.Instance.strengthPotionSprite;
