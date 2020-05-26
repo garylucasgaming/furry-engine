@@ -15,6 +15,10 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveVelocity;
 
+    //interact script sets this value
+    [Header("Interact script sets this- do not assign")]
+    public Interact currentInteractObj;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +38,9 @@ public class Player : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.X))
             {
-                Debug.Log("Test");
+                currentInteractObj.AddItem();
+                //add a wait mechanic
+                Destroy(currentInteractObj.gameObject);
             }
         }
 
@@ -45,6 +51,7 @@ public class Player : MonoBehaviour
         //actually move the thing
         rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
     }
+
 
    
 
