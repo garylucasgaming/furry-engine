@@ -19,10 +19,10 @@ public class AddItemButton : MonoBehaviour
     public void AddItem() {
         if (dandelion)
         {
-            IM.inventory.AddItem(new Item { itemType = Item.ItemType.Dandelion, amount = 1 });
+            IM.inventory.AddItem(new Item { itemType = Item.ItemType.Orchid, amount = 1 });
         }
         else if (pumpkin) {
-            IM.inventory.AddItem(new Item { itemType = Item.ItemType.Pumpkin, amount = 1 });
+            IM.inventory.AddItem(new Item { itemType = Item.ItemType.Lavender, amount = 1 });
         }
         else if (bat)
         {
@@ -35,11 +35,11 @@ public class AddItemButton : MonoBehaviour
 
         if (dandelion)
         {
-            IM.inventory.RemoveItem(new Item { itemType = Item.ItemType.Dandelion, amount = 1 });
+            IM.inventory.RemoveItem(new Item { itemType = Item.ItemType.Orchid, amount = 1 });
         }
         else if (pumpkin)
         {
-            IM.inventory.RemoveItem(new Item { itemType = Item.ItemType.Pumpkin, amount = 1 });
+            IM.inventory.RemoveItem(new Item { itemType = Item.ItemType.Lavender, amount = 1 });
         }
         else if (bat)
         {
