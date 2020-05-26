@@ -28,10 +28,10 @@ public class Cauldron : MonoBehaviour
     //put recipes here
     public void GenerateRecipeList() {
         //healing potion recipe
-        AddRecipe(new Recipe { recipeType = Recipe.RecipeType.HealingPotionRecipe, potion = new Item { itemType = Item.ItemType.HealingPotion, amount = 1 }, ingredientOne =  new Item {itemType = Item.ItemType.Dandelion, amount = 1 }, ingredientTwo = new Item { itemType = Item.ItemType.Pumpkin, amount = 1 }, Name = "Healing Potion" } );
+        AddRecipe(new Recipe { recipeType = Recipe.RecipeType.HealingPotionRecipe, potion = new Item { itemType = Item.ItemType.HealingPotion, amount = 1 }, ingredientOne =  new Item {itemType = Item.ItemType.Orchid, amount = 1 }, ingredientTwo = new Item { itemType = Item.ItemType.Lavender, amount = 1 }, Name = "Healing Potion" } );
 
         //strength potion recipe
-        AddRecipe(new Recipe { recipeType = Recipe.RecipeType.StrengthPotionRecipe, potion = new Item { itemType = Item.ItemType.StrengthPotion, amount = 1 }, ingredientOne = new Item { itemType = Item.ItemType.Bat, amount = 1 }, ingredientTwo = new Item { itemType = Item.ItemType.Dandelion, amount = 1 }, Name = "Strength Potion" });
+        AddRecipe(new Recipe { recipeType = Recipe.RecipeType.StrengthPotionRecipe, potion = new Item { itemType = Item.ItemType.StrengthPotion, amount = 1 }, ingredientOne = new Item { itemType = Item.ItemType.Bat, amount = 1 }, ingredientTwo = new Item { itemType = Item.ItemType.Orchid, amount = 1 }, Name = "Strength Potion" });
 
     }
 
