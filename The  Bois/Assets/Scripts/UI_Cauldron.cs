@@ -30,6 +30,7 @@ public class UI_Cauldron : MonoBehaviour
 
     private void Start()
     {
+        checkInventoryForIngredients();
         updateRecipeUI();
         activeRecipe = 0;
     }
