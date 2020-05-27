@@ -7,6 +7,7 @@ public class Respawner : MonoBehaviour
 {
     public float targetTime = 10f;
     public GameObject resource;
+    private bool hasRespawned = false;
 
 
     private void Awake()
@@ -21,8 +22,13 @@ public class Respawner : MonoBehaviour
     {
         targetTime -= Time.deltaTime;
 
-        if (targetTime <= 0f) {
+        if (targetTime <= 0f && !hasRespawned) {
+
             timerEnded();
+            hasRespawned = true;
+        } else if (targetTime <= 0f && hasRespawned)
+        {
+            hasRespawned = false;
         }
        
     }

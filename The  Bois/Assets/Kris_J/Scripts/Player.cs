@@ -18,6 +18,10 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveVelocity;
 
+    //audio manager
+    public GameObject audiomanager;
+
+
     //player collision
     
     Collider2D collisionObject;
@@ -29,6 +33,13 @@ public class Player : MonoBehaviour
 
     //inventory manager reference
     public InventoryManager IM;
+
+    private void Awake()
+    {
+        if (GameObject.FindGameObjectWithTag("AudioManager") == null) {
+            Instantiate(audiomanager);
+        }
+    }
 
 
     // Start is called before the first frame update

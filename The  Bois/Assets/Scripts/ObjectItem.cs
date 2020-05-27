@@ -10,7 +10,7 @@ public class ObjectItem : MonoBehaviour
 
     public void destroyObject() {
 
-        if (this.transform.parent)
+        if (this.transform.parent.name == "BatAsset")
         {
             Debug.Log("parent destroyed");
            Destroy(this.transform.parent.gameObject);
