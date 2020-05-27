@@ -7,41 +7,33 @@ public class Respawner : MonoBehaviour
 {
     public float targetTime = 10f;
     public GameObject resource;
-    private bool hasRespawned = false;
-
 
     private void Awake()
     {
         var newResource = Instantiate(resource, transform.position, transform.rotation);
-        newResource.transform.SetParent(this.transform);
+        newResource.transform.SetParent(transform);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        targetTime -= Time.deltaTime;
-
-        if (targetTime <= 0f && !hasRespawned) {
-
-            timerEnded();
-            hasRespawned = true;
-        } else if (targetTime <= 0f && hasRespawned)
+        //If no children, begin/continue countdown
+        if (transform.childCount == 0)
         {
-            hasRespawned = false;
+            targetTime -= Time.deltaTime;
+            if (targetTime <= 0f)
+            {
+                timerEnded();
+            }
         }
-       
     }
 
     private void timerEnded()
     {
-        if (this.transform.childCount == 0)
-        {
-            var newResource = Instantiate(resource, transform.position, transform.rotation);
-            newResource.transform.SetParent(this.transform);
-            
-            targetTime = 10f;
-        }
-       
+        var newResource = Instantiate(resource, transform.position, transform.rotation);
+        newResource.transform.SetParent(transform);
+
+        targetTime = 10f;
     }
 }

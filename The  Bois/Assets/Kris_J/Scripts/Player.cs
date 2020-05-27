@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
 
     //audio manager
     public GameObject audiomanager;
+    public PauseMenu pauseMenu;
 
 
     //player collision
@@ -80,12 +81,10 @@ public class Player : MonoBehaviour
         //}
 
 
+
         //interact 
         if (canInteract == true)
         {
-            
-        
-
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 if (cauldronOpen == true)
@@ -103,6 +102,8 @@ public class Player : MonoBehaviour
                     canvas.transform.Find("UI_Cauldron").gameObject.SetActive(false);
                     cauldronOpen = false;
                 }
+                else if (!PauseMenu.gameIsPaused) pauseMenu.PauseGame();
+                else pauseMenu.ResumeGame();
             }
 
                 if (Input.GetKeyDown(KeyCode.E))
@@ -136,11 +137,12 @@ public class Player : MonoBehaviour
                     canvas.transform.Find("UI_Cauldron").gameObject.SetActive(false);
                     cauldronOpen = false;
                 }
-
-                
-
-
             }
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!PauseMenu.gameIsPaused) pauseMenu.PauseGame();
+            else pauseMenu.ResumeGame();
         }
 
     }

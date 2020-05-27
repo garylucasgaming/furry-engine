@@ -31,8 +31,8 @@ public class Trader : MonoBehaviour
                 if (item.itemType == Item.ItemType.HealingPotion ||
                     item.itemType == Item.ItemType.StrengthPotion)
                 {
+                    player.money += item.amount;
                     IM.inventory.RemoveItem(item);
-                    player.money++;
                 }
             }
         }
