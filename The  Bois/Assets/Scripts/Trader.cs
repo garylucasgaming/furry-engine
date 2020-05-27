@@ -7,6 +7,13 @@ public class Trader : MonoBehaviour
     [SerializeField] InventoryManager IM;
     [SerializeField] Player player;
 
+
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        IM = GameObject.FindGameObjectWithTag("InventoryManager").GetComponent<InventoryManager>(); 
+    }
+
     public void SellPotions()
     {
         Debug.Log("Selling potions");

@@ -7,10 +7,15 @@ using UnityEngine;
 
 public class Interact : MonoBehaviour
 {
-    [SerializeField]
+    
     private Player UserPlayer;
 
-    
+    private void Awake()
+    {
+        UserPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+            
+    }
+
 
     private void OnTriggerEnter2D(Collider2D player)
     {
